@@ -4,31 +4,26 @@
   "description": "Web component for Jupyter kernel rich output/display",
   "main": "dist/jupyter-display-area.js",
   "scripts": {
-    "prebuild": "mkdirp dist && mkdirp lib && npm run clean",
-    "build": "npm run build:es5 && npm run build:browser && npm run build:html && npm run build:vulcanize",
+    "prebuild": "mkdirp lib && mkdirp dist && npm run clean",
+    "test": "mocha --compilers js:babel/register",
+    "build": "npm run build:es5 && npm run build:browser",
     "build:es5": "babel src --out-dir lib/ --source-maps",
-    "build:browser": "browserify lib/*.js --outfile dist/jupyter-display-area.js",
-    "build:html": "cp src/jupyter-display-area.html dist/jupyter-display-area.local.html",
-    "build:vulcanize": "vulcanize --inline-scripts dist/jupyter-display-area.local.html > dist/jupyter-display-area.html",
+    "build:browser": "browserify lib/*.js --outfile dist/transformime.js",
     "prepublish": "npm run build",
-    "watch": "npm run watch:build -s",
+    "watch": "parallelshell 'npm run watch:test -s' 'npm run watch:build -s'",
     "watch:build": "nodemon -q -w src/ --ext '.' --exec 'npm run build'",
-    "serve": "http-server -p 9090",
-    "test": "echo 'This is totally not a test.'",
-    "clean": "rimraf dist/* lib/*",
-    "live-reload": "live-reload --port 9091 dist/ demo/",
-    "open:dev": "opener http://localhost:9090/demo/",
-    "dev": "npm run open:dev -s & parallelshell 'npm run live-reload -s' 'npm run serve -s' 'npm run watch -s'"
-  },
+    "watch:test": "npm run test -- -w",
+    "clean": "rimraf lib/* dist/*"
+    },
   "repository": {
     "type": "git",
-    "url": "git://github.com/rgbkrk/jupyter-display-area.git"
+    "url": "git://github.com/nteract/jupyter-display-area.git"
   },
   "author": "Kyle Kelley",
   "license": "BSD-3-Clause",
   "bugs": {
     "exist": "likely",
-    "url": "https://github.com/rgbkrk/jupyter-display-area/issues"
+    "url": "https://github.com/nteract/jupyter-display-area/issues"
   },
   "devDependencies": {
     "babel": "^5.6.14",
