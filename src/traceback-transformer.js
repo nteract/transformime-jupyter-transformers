@@ -1,8 +1,8 @@
 "use strict";
 
-import {ConsoleTextRenderer} from './console-text-renderer';
+import {ConsoleTextTransformer} from './console-text-transformer';
 
-export class TracebackRenderer extends ConsoleTextRenderer {
+export class TracebackTransformer extends ConsoleTextTransformer {
     get mimetype() {
         return 'jupyter/traceback';
     }

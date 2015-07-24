@@ -1,10 +1,8 @@
 "use strict";
 
-import {RendererBase} from 'transformime/lib/rendererbase';
-
 var Convert = require('ansi-to-html');
 
-export class ConsoleTextRenderer extends RendererBase {
+export class ConsoleTextTransformer {
     get mimetype() {
         return 'jupyter/console-text';
     }

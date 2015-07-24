@@ -1,29 +1,29 @@
 {
-  "name": "jupyter-display-area",
-  "version": "0.0.5",
-  "description": "Web component for Jupyter kernel rich output/display",
-  "main": "dist/jupyter-display-area.js",
+  "name": "transformime-jupyter-transformers",
+  "version": "0.0.1",
+  "description": "Bundled transformers used for Jupyter specific output",
+  "main": "dist/index.js",
   "scripts": {
     "prebuild": "mkdirp lib && mkdirp dist && npm run clean",
     "test": "mocha --compilers js:babel/register",
     "build": "npm run build:es5 && npm run build:browser",
     "build:es5": "babel src --out-dir lib/ --source-maps",
-    "build:browser": "browserify lib/*.js --outfile dist/transformime.js",
+    "build:browser": "browserify lib/*.js --outfile dist/index.js",
     "prepublish": "npm run build",
     "watch": "parallelshell 'npm run watch:test -s' 'npm run watch:build -s'",
     "watch:build": "nodemon -q -w src/ --ext '.' --exec 'npm run build'",
     "watch:test": "npm run test -- -w",
     "clean": "rimraf lib/* dist/*"
-    },
+  },
   "repository": {
     "type": "git",
-    "url": "git://github.com/nteract/jupyter-display-area.git"
+    "url": "git://github.com/nteract/transformime-jupyter-transformers.git"
   },
   "author": "Kyle Kelley",
   "license": "BSD-3-Clause",
   "bugs": {
     "exist": "likely",
-    "url": "https://github.com/nteract/jupyter-display-area/issues"
+    "url": "https://github.com/nteract/transformime-jupyter-transformers/issues"
   },
   "devDependencies": {
     "babel": "^5.6.14",
@@ -41,6 +41,6 @@
   },
   "dependencies": {
     "ansi-to-html": "^0.3.0",
-    "transformime": "0.0.4"
+    "transformime-commonmark": "0.0.1"
   }
 }
