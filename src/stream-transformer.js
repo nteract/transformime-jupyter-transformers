@@ -1,8 +1,8 @@
 "use strict";
 
-import {ConsoleTextRenderer} from './console-text-renderer';
+import {ConsoleTextTransformer} from './console-text-transformer';
 
-export class StreamRenderer extends ConsoleTextRenderer {
+export class StreamTransformer extends ConsoleTextTransformer {
     get mimetype() {
         return 'jupyter/stream';
     }

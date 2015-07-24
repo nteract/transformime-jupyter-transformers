@@ -1,6 +1,6 @@
-# transformime-jupyter-renderers
+# transformime-jupyter-transformers
 
-Extra renderers for [transformime](https://github.com/nteract/transformime) to support Jupyter-specific MIME types.
+Extra transformers for [transformime](https://github.com/nteract/transformime) to support Jupyter-specific MIME types.
 
 ## Installation
 
