@@ -14,7 +14,7 @@
     "watch:build": "nodemon -q -w src/ --ext '.' --exec 'npm run build'",
     "watch:test": "npm run test -- -w",
     "clean": "rimraf lib/* dist/*"
-    },
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/nteract/transformime-jupyter-transformers.git"
@@ -41,5 +41,6 @@
   },
   "dependencies": {
     "ansi-to-html": "^0.3.0",
+    "transformime-commonmark": "0.0.1"
   }
 }
