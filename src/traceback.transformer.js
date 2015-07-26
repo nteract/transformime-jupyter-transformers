@@ -1,6 +1,6 @@
 "use strict";
 
-import {ConsoleTextTransformer} from './console-text-transformer';
+import {ConsoleTextTransformer} from './console-text.transformer';
 
 export class TracebackTransformer extends ConsoleTextTransformer {
     get mimetype() {
