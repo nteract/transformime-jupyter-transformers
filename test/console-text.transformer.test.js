@@ -2,7 +2,7 @@ import {assert} from 'chai';
 
 import {jsdom} from 'jsdom';
 
-import {ConsoleTextTransformer} from '../src/index';
+import {ConsoleTextTransformer} from '../src/console-text.transformer';
 
 describe('console text transformer', function() {
     beforeEach(function() {
