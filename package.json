@@ -2,7 +2,7 @@
   "name": "transformime-jupyter-transformers",
   "version": "0.0.1",
   "description": "Bundled transformers used for Jupyter specific output",
-  "main": "dist/index.js",
+  "main": "lib/index.js",
   "scripts": {
     "prebuild": "mkdirp lib && mkdirp dist && npm run clean",
     "test": "mocha --compilers js:babel/register",
