@@ -5,5 +5,5 @@ Extra transformers for [transformime](https://github.com/nteract/transformime) t
 ## Installation
 
 ```
-npm install <TBD>
+npm install transformime-jupyter-transformers
 ```
