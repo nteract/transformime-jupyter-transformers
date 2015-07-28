@@ -4,4 +4,10 @@ import {LaTeXTransformer} from './latex.transformer';
 import {MarkdownTransformer} from 'transformime-commonmark';
 import {PDFTransformer} from './pdf.transformer';
 
-export default {StreamTransformer, TracebackTransformer, MarkdownTransformer};
+export default {
+    StreamTransformer,
+    TracebackTransformer,
+    MarkdownTransformer,
+    LaTeXTransformer,
+    PDFTransformer
+};
