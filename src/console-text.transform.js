@@ -19,4 +19,4 @@ let consoleTextTransform = function() {
 }();
 
 consoleTextTransform.mimetype = 'jupyter/console-text';
-export default consoleTextTransform;
+export consoleTextTransform;
