@@ -2,7 +2,7 @@ import {assert} from 'chai';
 
 import {jsdom} from 'jsdom';
 
-import {ConsoleTextTransformer} from '../src/console-text.transformer';
+import {consoleTextTransform} from '../src/console-text.transform';
 
 describe('console text transformer', function() {
     beforeEach(function() {
@@ -10,7 +10,6 @@ describe('console text transformer', function() {
     });
 
     it('should have the jupyter/console-text mimetype', function() {
-        var ht = new ConsoleTextTransformer();
-        assert.equal(ht.mimetype, "jupyter/console-text");
+        assert.equal(consoleTextTransform.mimetype, "jupyter/console-text");
     });
 });
