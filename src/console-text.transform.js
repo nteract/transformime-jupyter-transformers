@@ -11,11 +11,16 @@ export var consoleTextTransform = function() {
     });
 
     return function(mimetype, text, document) {
-        var el = doc.createElement('pre');
+        var el = document.createElement('pre');
 
         el.innerHTML = convert.toHtml(text);
         return el;
     }
-}();
+} ();
+
 
 consoleTextTransform.mimetype = 'jupyter/console-text';
+
+// export consoleTextTransform;
+// import {consoleTextTransform} from './src/console-text.transform';
+// import './src/console-text.transform';
