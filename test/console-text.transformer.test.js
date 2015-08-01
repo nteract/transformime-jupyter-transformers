@@ -4,7 +4,7 @@ import {jsdom} from 'jsdom';
 
 import {consoleTextTransform} from '../src/console-text.transform';
 
-describe('console text transformer', function() {
+describe('console text transform', function() {
     beforeEach(function() {
         this.document = jsdom();
     });

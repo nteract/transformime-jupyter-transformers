@@ -2,7 +2,7 @@
 
 var Convert = require('ansi-to-html');
 
-let consoleTextTransform = function() {
+export var consoleTextTransform = function() {
     // Stick convert in a closure so it only gets created once.
 
     let convert = new Convert({
@@ -19,4 +19,3 @@ let consoleTextTransform = function() {
 }();
 
 consoleTextTransform.mimetype = 'jupyter/console-text';
-export consoleTextTransform;
