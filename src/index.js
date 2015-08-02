@@ -1,13 +1,11 @@
-import {StreamTransformer} from './stream.transformer';
-import {TracebackTransformer} from './traceback.transformer';
-import {LaTeXTransformer} from './latex.transformer';
-import {MarkdownTransformer} from 'transformime-commonmark';
-import {PDFTransformer} from './pdf.transformer';
+import markdownTransform from 'transformime-commonmark';
+import {consoleTextTransform} from './console-text.transform';
+import {LaTeXTransform} from './latex.transform';
+import {PDFTransform} from './pdf.transform';
 
 export default {
-    StreamTransformer,
-    TracebackTransformer,
-    MarkdownTransformer,
-    LaTeXTransformer,
-    PDFTransformer
+    consoleTextTransform,
+    markdownTransform,
+    LaTeXTransform,
+    PDFTransform
 };
