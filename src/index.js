@@ -1,5 +1,5 @@
 import {consoleTextTransform} from './console-text.transform';
-import {JSTransformer} from './js.transformer';
+import {ScriptTransform} from './script.transform';
 import {LaTeXTransform} from './latex.transform';
 import markdownTransform from 'transformime-commonmark';
 import {PDFTransform} from './pdf.transform';
@@ -10,6 +10,6 @@ export default {
     markdownTransform,
     LaTeXTransform,
     PDFTransform, 
-    JSTransformer,
+    ScriptTransform,
     SVGTransform
 };
