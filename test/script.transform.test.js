@@ -12,9 +12,11 @@ describe('script transform', function() {
             ]);
     });
 
-    it('should create a script tag', function() {
+    it('should have the text/javascript mimetype', function() {
         assert.equal(ScriptTransform.mimetype, 'text/javascript');
+    });
 
+    it('should create a script tag', function() {
         var promEl = this.t.transform(
             {"text/javascript": "window.x = 1"},
             this.document);
