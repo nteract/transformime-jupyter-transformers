@@ -6,4 +6,4 @@ export function ScriptTransform(mimetype, value, document) {
     el.appendChild(document.createTextNode(value));
     return el;
 }
-ScriptTransform.mimetype = 'text/javascript';
+ScriptTransform.mimetype = ['text/javascript', 'application/javascript'];
