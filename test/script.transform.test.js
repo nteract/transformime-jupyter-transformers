@@ -13,7 +13,8 @@ describe('script transform', function() {
     });
 
     it('should have the text/javascript mimetype', function() {
-        assert.equal(ScriptTransform.mimetype, 'text/javascript');
+        assert.include(ScriptTransform.mimetype, 'text/javascript');
+        assert.include(ScriptTransform.mimetype, 'application/javascript');
     });
 
     it('should create a script tag', function() {
