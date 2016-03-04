@@ -4,7 +4,12 @@ var katex = require('katex');
 
 export function LaTeXTransform(mimetype, latex, document) {
     var el = document.createElement('div');
-    el.innerHTML = katex.renderToString(latex);
+    if (typeof MathJaX !== "undefined") {
+        el.textContent = latex;
+        MathJax.Hub.Queue(["Typeset", MathJax.Hub, node]);
+    } else {
+        el.innerHTML = katex.renderToString(latex);
+    }
     return el;
 }
 
