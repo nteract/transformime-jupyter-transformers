@@ -6,7 +6,7 @@ export function LaTeXTransform(mimetype, latex, document) {
     var el = document.createElement('div');
     if (typeof MathJaX !== "undefined") {
         el.textContent = latex;
-        MathJax.Hub.Queue(["Typeset", MathJax.Hub, node]);
+        MathJax.Hub.Queue(["Typeset", MathJax.Hub, el]);
     } else {
         el.innerHTML = katex.renderToString(latex);
     }
