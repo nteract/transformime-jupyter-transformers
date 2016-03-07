@@ -4,7 +4,7 @@ var katex = require('katex');
 
 export function LaTeXTransform(mimetype, latex, document) {
     var el = document.createElement('div');
-    if (typeof MathJaX !== "undefined") {
+    if (typeof MathJax !== "undefined") {
         el.textContent = latex;
         MathJax.Hub.Queue(["Typeset", MathJax.Hub, el]);
     } else {
