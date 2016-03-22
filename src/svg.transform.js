@@ -1,11 +1,14 @@
 "use strict";
 
-export function SVGTransform(mimetype, value, document) {
-    // Create a div and append SVG XML to that div as HTML.  The SVG XML 
-    // includes the parent SVG tag, so all we need to do is return the first
-    // child element of the div == svg element.
-    var el = document.createElement('div');
-    el.innerHTML = value;
-    return el.firstChild;
+export function SVGTransform(mimetype, value, doc) {
+    const container = doc.createElement('div');
+    container.innerHTML = value;
+
+    const svgElement = container.getElementsByTagName('svg')[0];
+    if (!svgElement) {
+        throw new Error("SVGTransform: Error: Failed to create <svg> element");
+    }
+
+    return svgElement;
 }
 SVGTransform.mimetype = 'image/svg+xml';
