@@ -1,22 +1,13 @@
 "use strict";
 
-var Convert = require('ansi-to-html');
+var ansi_up = require('ansi_up');
 
-export var consoleTextTransform = function() {
-    // Stick convert in a closure so it only gets created once.
-
-    let convert = new Convert({
-        escapeXML: true,
-        newLine: true
-    });
-
-    return function(mimetype, text, document) {
-        var el = document.createElement('pre');
-
-        el.innerHTML = convert.toHtml(text);
-        return el;
-    }
-} ();
+export function consoleTextTransform(mimetype, value, document) {
+    var el = document.createElement('pre');
+    var esc = ansi_up.escape_for_html(value);
+    el.innerHTML = ansi_up.ansi_to_html(esc);
+    return el;
+}
 
 
 consoleTextTransform.mimetype = 'jupyter/console-text';
