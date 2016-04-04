@@ -29,4 +29,16 @@ describe('console text transform', function() {
             assert.equal(el.localName, "pre");
         });
     });
+
+    it('should output the correct HTML with ansi colors', function() {
+        let consoleText = '\x1b[01;41;32mtext \x1b[00m';
+        let transformed =  this.t.transform(
+            {'jupyter/console-text': consoleText},
+            this.document);
+        return transformed.then(({el}) => {
+            assert.equal(el.outerHTML, '<pre><span style="color:rgb(0, 255, 0);background-color:rgb(187, 0, 0)">text </span></pre>');
+            assert.equal(el.textContent, 'text ');
+            assert.equal(el.localName, "pre");
+        });
+    });
 });
