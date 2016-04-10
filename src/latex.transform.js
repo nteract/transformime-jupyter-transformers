@@ -1,16 +1,15 @@
 "use strict";
 
-var katex = require('katex');
+var mathjaxHelper = require('./mathjax-helper');
 
-export function LaTeXTransform(mimetype, latex, document) {
-    var el = document.createElement('div');
-    if (typeof MathJax !== "undefined") {
-        el.textContent = latex;
-        MathJax.Hub.Queue(["Typeset", MathJax.Hub, el]);
-    } else {
-        el.innerHTML = katex.renderToString(latex);
-    }
-    return el;
+export function LaTeXTransform(mimetype, value, document) {
+    var container = document.createElement('script');
+    container.type = 'math/tex';
+    container.innerHTML = value.replace('<br>', '');
+
+    mathjaxHelper.loadMathJax(document);
+    mathjaxHelper.mathProcessor(container);
+    return container;
 }
 
 LaTeXTransform.mimetype = 'text/latex';
