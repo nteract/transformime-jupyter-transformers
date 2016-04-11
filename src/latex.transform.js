@@ -1,6 +1,6 @@
 "use strict";
 
-var mathjaxHelper = require('./mathjax-helper');
+var mathjaxHelper = require('mathjax-electron');
 
 export function LaTeXTransform(mimetype, value, document) {
     var container = document.createElement('script');

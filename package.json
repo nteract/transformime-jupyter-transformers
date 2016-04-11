@@ -45,6 +45,7 @@
   },
   "dependencies": {
     "ansi_up": "^1.3.0",
-    "transformime-commonmark": "^0.1.0"
+    "transformime-commonmark": "^0.1.0",
+    "mathjax-electron": "^0.1.0"
   }
 }

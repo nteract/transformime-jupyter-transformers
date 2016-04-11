@@ -29,13 +29,4 @@ describe('latex transform', function() {
             assert.equal(el.outerHTML, mathJaxScript);
         });
     });
-
-    it('should load MathJax', function() {
-        let mathJaxPath = path.join(__dirname, "..", "resources");
-        let headScript = '<script type="text/javascript" src="' + mathJaxPath + '/MathJax/MathJax.js?delayStartupUntil=configured"></script>'
-
-        this.t.transform({'text/latex': 'LaTeX'}, this.document);
-        let script = this.document.getElementsByTagName('script')[0].outerHTML
-        return assert.equal(script, headScript);
-    });
 });
