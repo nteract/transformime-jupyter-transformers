@@ -19,9 +19,9 @@ describe('latex transform', function() {
         assert.equal(LaTeXTransform.mimetype, 'text/latex');
     });
 
-    it('should output the correct MathJax script', function() {
-        let latex = '\sum\limits_{i=0}^{\infty} \frac{1}{n^2}';
-        let mathJaxScript = '<script type="math/tex">\sum\limits_{i=0}^{\infty} \frac{1}{n^2}</script>';
+    it('should output the correct HTML', function() {
+        let latex = '$$\\sum\\limits_{i=0}^{\\infty} \\frac{1}{n^2}$$';
+        let mathJaxScript = '<div>$$\\sum\\limits_{i=0}^{\\infty} \\frac{1}{n^2}$$</div>';
         let transformed =  this.t.transform(
             {'text/latex': latex},
             this.document);
