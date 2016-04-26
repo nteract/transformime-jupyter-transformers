@@ -3,9 +3,8 @@
 var mathjaxHelper = require('mathjax-electron');
 
 export function LaTeXTransform(mimetype, value, document) {
-    var container = document.createElement('script');
-    container.type = 'math/tex';
-    container.innerHTML = value.replace(/<br>|\$\$|^\$|\$$|\\\(|\\\)|\\\[|\\\]/g, '');
+    var container = document.createElement('div');
+    container.innerHTML = value;
 
     mathjaxHelper.loadMathJax(document);
     mathjaxHelper.mathProcessor(container);
