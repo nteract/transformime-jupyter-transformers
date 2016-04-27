@@ -1,6 +1,6 @@
 {
   "name": "transformime-jupyter-transformers",
-  "version": "0.6.0",
+  "version": "1.0.0",
   "description": "Bundled transformers used for Jupyter specific output",
   "main": "lib/index.js",
   "scripts": {
